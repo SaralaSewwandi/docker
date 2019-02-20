@@ -1,0 +1,25 @@
+version: '3.2'
+services:
+ ub1:
+  build: 
+   context: ./dock1
+  volumes:
+   - type: volume
+     source: mydata
+     target: /code1
+     volume:
+          nocopy: true
+  container_name: uc1
+ ub2:
+  build:
+   context: ./dock2
+  volumes:
+   - type: volume
+     source: mydata
+     target: /code2
+     volume:
+          nocopy: true
+  container_name: uc2
+
+volumes:
+ mydata:
